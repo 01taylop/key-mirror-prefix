@@ -1,5 +1,8 @@
-KeyMirrorPrefix
-=========
+# Key Mirror Prefix
+
+A simple utility for creating an object with values equal to its keys, with a prefix.
+
+---
 
 Create an object with each value constructed by concatonating a prefix with its key name.
 
