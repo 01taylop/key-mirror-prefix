@@ -1,4 +1,4 @@
-import { keyMirrorPrefix } from '../src/index'
+import { keyMirror, keyMirrorPrefix } from '../src/index'
 
 describe('keyMirrorPrefix', () => {
 
@@ -41,6 +41,22 @@ describe('keyMirrorPrefix', () => {
     expect(testObject).toEqual({
       hello: 'prefix_hello',
       world: 'prefix_world',
+    })
+  })
+
+})
+
+describe('keyMirror', () => {
+
+  it('returns a key mirror object', () => {
+    const testObject = keyMirror({
+      hello: null,
+      world: null,
+    })
+
+    expect(testObject).toEqual({
+      hello: 'hello',
+      world: 'world',
     })
   })
 

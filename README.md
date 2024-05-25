@@ -80,3 +80,19 @@ const COLOURS = keyMirrorPrefix('COLOURS', {
 
 console.log(COLOURS.blue) // Outputs: COLOURS_blue
 ```
+
+If you do not need a prefix, you can either pass `null` as the first argument to `keyMirrorPrefix`, or you can import and use `keyMirror`:
+
+```js
+import { keyMirror, keyMirrorPrefix } from 'keymirrorprefix'
+
+const COLOURS = keyMirrorPrefix(null, {
+  blue: null,
+  red: null,
+})
+
+const SHAPES = keyMirror({
+  square: null,
+  triangle: null,
+})
+```

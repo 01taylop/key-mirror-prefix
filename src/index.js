@@ -11,6 +11,9 @@ const keyMirrorPrefix = (prefix, obj) => {
   return mirror
 }
 
+const keyMirror = obj => keyMirrorPrefix(null, obj)
+
 export {
+  keyMirror,
   keyMirrorPrefix,
 }

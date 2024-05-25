@@ -1,4 +1,2 @@
-ignores: [
-  "babel-jest",
-]
+ignores: []
 skip-missing: true
