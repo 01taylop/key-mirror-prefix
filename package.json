@@ -27,7 +27,8 @@
   "scripts": {
     "build": "rimraf lib && babel src -d lib --out-file-extension .cjs && cp src/index.js lib/",
     "publishLib": "yarn test --coverage && yarn build && npm publish",
-    "test": "jest"
+    "test": "jest",
+    "test:build": "jest --config jest.config.cjs.js"
   },
   "devDependencies": {
     "@babel/cli": "7.24.6",

@@ -1,4 +1,4 @@
-export default function(prefix, obj) {
+const keyMirrorPrefix = (prefix, obj) => {
   if (!(obj instanceof Object && !Array.isArray(obj))) {
     throw new Error('keyMirrorPrefix(...): Second argument must be an object.')
   }
@@ -9,4 +9,8 @@ export default function(prefix, obj) {
   })
 
   return mirror
+}
+
+export {
+  keyMirrorPrefix,
 }
