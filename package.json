@@ -1,6 +1,10 @@
 {
-  "name": "key-mirror-prefix",
-  "description": "A simple utility for creating an object with values equal to its keys, with a prefix.",
+  "name": "keymirrorprefix",
+  "description": "A utility for prefixing mirrored key-value pairs in JavaScript objects.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/01taylop/key-mirror-prefix"
+  },
   "version": "1.0.0",
   "type": "module",
   "main": "./lib/index.cjs",
@@ -24,19 +28,15 @@
   },
   "devDependencies": {
     "@babel/cli": "7.17.10",
-    "@babel/core": "7.17.10",
+    "@babel/core": "7.24.6",
     "@babel/plugin-proposal-optional-chaining": "7.16.7",
     "@babel/plugin-transform-modules-commonjs": "7.17.9",
-    "@babel/preset-env": "7.17.10",
-    "babel-jest": "28.1.0",
-    "jest": "28.1.0",
+    "@babel/preset-env": "7.24.6",
+    "babel-jest": "29.7.0",
+    "jest": "29.7.0",
     "rimraf": "3.0.2"
   },
   "author": "Patrick Taylor <hello@patricktaylor.dev>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/01taylop/key-mirror-prefix"
-  },
   "keywords": [
     "key-mirror",
     "key-mirror-prefix"
