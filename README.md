@@ -1,20 +1,22 @@
-KeyMirrorPrefix
-=========
+# Key Mirror Prefix
 
-Create an object with each value constructed by concatonating a prefix with its key name.
+Key Mirror Prefix is a utility for creating an object with values equal to its keys, prefixed with a specified string. This tool is especially useful for differentiating similar action types in Redux-based projects.
 
-I thought `https://github.com/STRML/keyMirror` was useful (esspecially as it had no additional dependencies) and wanted to reuse it, but with a prefix.
+- [Motivation](#motivation)
+- [Example](#example)
+- [Usage](#usage)
 
-Why?
-----
+## Motivation
 
-I work on a lot of projects that use React Redux, and KeyMirror is a useful tool when defining Action Types.
+While working on numerous projects that use React Redux, I found [`keyMirror`](https://github.com/STRML/keyMirror) to be a handy tool for defining Action Types. However, as the action names often become quite similar, it becomes challenging to differentiate them in the console.
 
-However, the action names inevitably become quite similar and the console does not differentiate them well.
+Key Mirror Prefix addresses this issue by allowing a prefix to be added to a group of action types. This makes it easier to identify the source of actions when logged to the console.
 
-So I like to add a prefix to a group of action types like these for searching for cities or countries.
+## Example
 
-```
+Consider the following action types for searching cities and countries:
+
+```js
 export const CITIES = keyMirrorPfx('CITIES', {
   SEARCH_REQUEST: null,
   SEARCH_SUCCESS: null,
@@ -28,9 +30,9 @@ export const COUNTRIES = keyMirrorPfx('COUNTRIES', {
 })
 ```
 
-This would log something like:
+With Key Mirror Prefix, the logged actions would look like this:
 
-```
+```js
 | prev state  { ... }
 | action      {type: "CITIES_SEARCH_SUCCESS"}
 | next state  { ... }
@@ -40,20 +42,30 @@ This would log something like:
 | next state  { ... }
 ```
 
-Usage
------
+This makes it clear whether the SEARCH_SUCCESS action came from CITIES or COUNTRIES.
 
-`yarn add -D keymirrorprefix` (or `npm install -D keymirrorprefix`)
+## Usage
 
+First, install the package as a dependency:
 
-```javascript
-import keyMirrorPfx from 'keymirrorprefix'
+```bash
+# Using yarn
+yarn add keymirrorprefix
 
-const COLOURS = keyMirrorPfx('COLOURS', { blue: null, red: null })
-
-console.log(COLOURS.blue) // COLOURS_blue
+# Using npm
+npm install keymirrorprefix
 ```
 
-Input:  `prefix, {key1: val1, key2: val2}`
+Then, you can import `keyMirrorPrefix` and use it to create an object with keys mirrored as values, prefixed with a specified string:
 
-Output: `{key1: prefix_key1, key2: prefix_key2}`
+```js
+import keyMirrorPrefix from 'keymirrorprefix'
+
+// Use keyMirrorPfx to create a new object with mirrored keys
+const COLOURS = keyMirrorPrefix('COLOURS', {
+  blue: null,
+  red: null,
+})
+
+console.log(COLOURS.blue) // Outputs: COLOURS_blue
+```
