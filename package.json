@@ -7,12 +7,15 @@
   },
   "version": "1.0.0",
   "type": "module",
-  "main": "./lib/index.cjs",
+  "main": "./lib/index.js",
   "exports": {
     ".": {
-      "require": "./lib/index.cjs",
-      "import": "./lib/index.mjs"
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
     }
+  },
+  "engines": {
+    "node": ">=12.8.0"
   },
   "files": [
     "lib",
@@ -22,19 +25,16 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "rimraf lib && babel src -d lib --out-file-extension .cjs && cp src/index.mjs lib/",
+    "build": "rimraf lib && babel src -d lib --out-file-extension .cjs && cp src/index.js lib/",
     "publishLib": "yarn test --coverage && yarn build && npm publish",
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/cli": "7.17.10",
+    "@babel/cli": "7.24.6",
     "@babel/core": "7.24.6",
-    "@babel/plugin-proposal-optional-chaining": "7.16.7",
-    "@babel/plugin-transform-modules-commonjs": "7.17.9",
     "@babel/preset-env": "7.24.6",
-    "babel-jest": "29.7.0",
     "jest": "29.7.0",
-    "rimraf": "3.0.2"
+    "rimraf": "5.0.7"
   },
   "author": "Patrick Taylor <hello@patricktaylor.dev>",
   "keywords": [
