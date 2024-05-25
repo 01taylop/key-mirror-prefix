@@ -3,7 +3,6 @@
   "version": "0.0.3",
   "description": "A utility for prefixing mirrored key-value pairs in JavaScript objects.",
   "main": "index.js",
-  "author": "Patrick Taylor <patchfalcon@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/01taylop/key-mirror-prefix"
@@ -16,5 +15,10 @@
     "@babel/preset-env": "7.24.6",
     "babel-jest": "29.7.0",
     "jest": "29.7.0"
-  }
+  },
+  "author": "Patrick Taylor <hello@patricktaylor.dev>",
+  "keywords": [
+    "key-mirror",
+    "key-mirror-prefix"
+  ]
 }
