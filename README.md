@@ -10,7 +10,7 @@ Key Mirror Prefix is a utility for creating an object with values equal to its k
 
 While working on numerous projects that use React Redux, I found [`keyMirror`](https://github.com/STRML/keyMirror) to be a handy tool for defining Action Types. However, as the action names often become quite similar, it becomes challenging to differentiate them in the console and ensure their uniqueness across the application.
 
-Key Mirror Prefix addresses this issue by allowing a prefix to be added to a group of action types. This not only makes it easier to identify the source of actions when logged to the console, but also facilitates ensuring the uniqueness of action names, a crucial requirement in Redux-based projects.
+Key Mirror Prefix addresses this issue by allowing a prefix to be added to a group of action types. This not only makes it easier to identify the source of actions when logged to the console, but also facilitates the uniqueness of action names, a crucial requirement in Redux-based projects.
 
 ## Example
 
