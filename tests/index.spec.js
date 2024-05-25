@@ -1,4 +1,4 @@
-import { keyMirrorPrefix } from '../lib/index'
+import { keyMirrorPrefix } from '../src/index'
 
 describe('keyMirrorPrefix', () => {
 
