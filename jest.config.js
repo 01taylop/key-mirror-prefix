@@ -12,5 +12,5 @@ export default {
       statements: 100,
     },
   },
-  testMatch: ['**/*.esm.spec.js'],
+  testMatch: ['**/*.spec.js'],
 }

@@ -61,13 +61,13 @@ Then, you can import `keyMirrorPrefix` using either CommonJS or ES Modules:
 For CommonJS:
 
 ```js
-const { keyMirrorPrefix } = require('keymirrorprefix');
+const { keyMirrorPrefix } = require('keymirrorprefix')
 ```
 
 For ES Modules:
 
 ```js
-import { keyMirrorPrefix } from 'keymirrorprefix';
+import { keyMirrorPrefix } from 'keymirrorprefix'
 ```
 
 Once you've imported `keyMirrorPrefix`, you can use it to create an object with keys mirrored as values, prefixed with a specified string:

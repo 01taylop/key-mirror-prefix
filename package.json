@@ -25,7 +25,9 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "rimraf lib && babel src -d lib --out-file-extension .cjs && cp src/index.js lib/",
+    "build:cjs": "babel src --d lib --env-name cjs --out-file-extension .cjs",
+    "build:esm": "babel src --d lib --env-name esm --out-file-extension .js",
+    "build": "rimraf lib && npm run build:cjs && npm run build:esm",
     "publishLib": "yarn test --coverage && yarn build && npm publish",
     "test": "jest",
     "test:build": "jest --config jest.config.cjs.js"

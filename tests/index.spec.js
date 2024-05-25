@@ -1,4 +1,4 @@
-const { keyMirrorPrefix } = require('../lib/index.cjs')
+import { keyMirrorPrefix } from '../lib/index'
 
 describe('keyMirrorPrefix', () => {
 
