@@ -17,13 +17,13 @@ Key Mirror Prefix addresses this issue by allowing a prefix to be added to a gro
 Consider the following action types for searching cities and countries:
 
 ```js
-export const CITIES = keyMirrorPfx('CITIES', {
+export const CITIES = keyMirrorPrefix('CITIES', {
   SEARCH_REQUEST: null,
   SEARCH_SUCCESS: null,
   SEARCH_FAILURE: null,
 })
 
-export const COUNTRIES = keyMirrorPfx('COUNTRIES', {
+export const COUNTRIES = keyMirrorPrefix('COUNTRIES', {
   SEARCH_REQUEST: null,
   SEARCH_SUCCESS: null,
   SEARCH_FAILURE: null,
@@ -42,7 +42,7 @@ With Key Mirror Prefix, the logged actions would look like this:
 | next state  { ... }
 ```
 
-This makes it clear whether the SEARCH_SUCCESS action came from CITIES or COUNTRIES.
+This makes it clear whether the `SEARCH_SUCCESS` action came from `CITIES` or `COUNTRIES`.
 
 ## Usage
 
@@ -61,7 +61,6 @@ Then, you can import `keyMirrorPrefix` and use it to create an object with keys 
 ```js
 import keyMirrorPrefix from 'keymirrorprefix'
 
-// Use keyMirrorPfx to create a new object with mirrored keys
 const COLOURS = keyMirrorPrefix('COLOURS', {
   blue: null,
   red: null,
