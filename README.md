@@ -1,5 +1,8 @@
 # Key Mirror Prefix
 
+[![CodeQL Analysis](https://github.com/01taylop/key-mirror-prefix/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/01taylop/key-mirror-prefix/actions/workflows/codeql-analysis.yml)
+[![Test](https://github.com/01taylop/key-mirror-prefix/actions/workflows/test.yml/badge.svg)](https://github.com/01taylop/key-mirror-prefix/actions/workflows/test.yml)
+
 Key Mirror Prefix is a utility for creating an object with values equal to its keys, prefixed with a specified string. This tool is especially useful for differentiating similar action types in Redux-based projects and ensuring their uniqueness.
 
 - [Motivation](#motivation)
