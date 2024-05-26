@@ -1,6 +1,6 @@
 # Key Mirror Prefix
 
-Key Mirror Prefix is a utility for creating an object with values equal to its keys, prefixed with a specified string. This tool is especially useful for differentiating similar action types in Redux-based projects.
+Key Mirror Prefix is a utility for creating an object with values equal to its keys, prefixed with a specified string. This tool is especially useful for differentiating similar action types in Redux-based projects and ensuring their uniqueness.
 
 - [Motivation](#motivation)
 - [Example](#example)
@@ -8,9 +8,9 @@ Key Mirror Prefix is a utility for creating an object with values equal to its k
 
 ## Motivation
 
-While working on numerous projects that use React Redux, I found [`keyMirror`](https://github.com/STRML/keyMirror) to be a handy tool for defining Action Types. However, as the action names often become quite similar, it becomes challenging to differentiate them in the console.
+While working on numerous projects that use React Redux, I found [`keyMirror`](https://github.com/STRML/keyMirror) to be a handy tool for defining Action Types. However, as the action names often become quite similar, it becomes challenging to differentiate them in the console and ensure their uniqueness across the application.
 
-Key Mirror Prefix addresses this issue by allowing a prefix to be added to a group of action types. This makes it easier to identify the source of actions when logged to the console.
+Key Mirror Prefix addresses this issue by allowing a prefix to be added to a group of action types. This not only makes it easier to identify the source of actions when logged to the console, but also facilitates the uniqueness of action names, a crucial requirement in Redux-based projects.
 
 ## Example
 
@@ -56,15 +56,46 @@ yarn add keymirrorprefix
 npm install keymirrorprefix
 ```
 
-Then, you can import `keyMirrorPrefix` and use it to create an object with keys mirrored as values, prefixed with a specified string:
+Then, you can import `keyMirrorPrefix` using either CommonJS or ES Modules:
+
+For CommonJS:
 
 ```js
-import keyMirrorPrefix from 'keymirrorprefix'
+const { keyMirrorPrefix } = require('keymirrorprefix')
+```
 
+For ES Modules:
+
+```js
+import { keyMirrorPrefix } from 'keymirrorprefix'
+```
+
+Once you've imported `keyMirrorPrefix`, you can use it to create an object with keys mirrored as values, prefixed with a specified string:
+
+```js
 const COLOURS = keyMirrorPrefix('COLOURS', {
   blue: null,
   red: null,
 })
 
-console.log(COLOURS.blue) // Outputs: COLOURS_blue
+console.log(COLOURS.blue) // "COLOURS_blue"
+```
+
+If you do not need a prefix, you can either pass `null` as the first argument to `keyMirrorPrefix`, or you can import and use `keyMirror`:
+
+```js
+import { keyMirror, keyMirrorPrefix } from 'keymirrorprefix'
+
+const COLOURS = keyMirrorPrefix(null, {
+  blue: null,
+  red: null,
+})
+
+const SHAPES = keyMirror({
+  square: null,
+  triangle: null,
+})
+
+console.log(COLOURS.blue) // "blue"
+console.log(SHAPES.square) // "square"
 ```
