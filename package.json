@@ -15,8 +15,7 @@
     }
   },
   "files": [
-    "lib",
-    "README.md"
+    "lib"
   ],
   "scripts": {
     "build:cjs": "babel src -d lib --env-name cjs --out-file-extension .cjs",
