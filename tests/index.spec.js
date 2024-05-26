@@ -1,17 +1,17 @@
-import keyMirrorPrefix from '../'
+import { keyMirror, keyMirrorPrefix } from '../src/index'
 
 describe('keyMirrorPrefix', () => {
 
   it('throws an error if the second argument is not an object', () => {
     expect(() => {
       keyMirrorPrefix(null, null)
-    }).toThrow('keyMirrorPrefix(...): Argument must be an object.')
+    }).toThrow('keyMirrorPrefix(...): Second argument must be an object.')
   })
 
   it('throws an error if the second argument is an array', () => {
     expect(() => {
       keyMirrorPrefix(null, [])
-    }).toThrow('keyMirrorPrefix(...): Argument must be an object.')
+    }).toThrow('keyMirrorPrefix(...): Second argument must be an object.')
   })
 
   it('returns an empty object if the second argument is an empty object', () => {
@@ -41,6 +41,22 @@ describe('keyMirrorPrefix', () => {
     expect(testObject).toEqual({
       hello: 'prefix_hello',
       world: 'prefix_world',
+    })
+  })
+
+})
+
+describe('keyMirror', () => {
+
+  it('returns a key mirror object', () => {
+    const testObject = keyMirror({
+      hello: null,
+      world: null,
+    })
+
+    expect(testObject).toEqual({
+      hello: 'hello',
+      world: 'world',
     })
   })
 
