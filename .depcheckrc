@@ -1,4 +1,4 @@
 ignores: [
-  "babel-jest",
+  "rimraf"
 ]
 skip-missing: true
