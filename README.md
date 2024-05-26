@@ -78,7 +78,7 @@ const COLOURS = keyMirrorPrefix('COLOURS', {
   red: null,
 })
 
-console.log(COLOURS.blue) // Outputs: COLOURS_blue
+console.log(COLOURS.blue) // "COLOURS_blue"
 ```
 
 If you do not need a prefix, you can either pass `null` as the first argument to `keyMirrorPrefix`, or you can import and use `keyMirror`:
@@ -95,4 +95,7 @@ const SHAPES = keyMirror({
   square: null,
   triangle: null,
 })
+
+console.log(COLOURS.blue) // "blue"
+console.log(SHAPES.square) // "square"
 ```
