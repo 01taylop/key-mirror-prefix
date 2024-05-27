@@ -80,7 +80,7 @@ For ES Modules:
 import { keyMirrorPrefix } from 'keymirrorprefix'
 ```
 
-The `keyMirrorPrefix` function can also be imported as a default export.
+The `keyMirrorPrefix` function is exported both as a default and named export, so you can import it either way.
 
 ### Example Usage
 
