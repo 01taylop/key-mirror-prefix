@@ -8,6 +8,9 @@ Key Mirror Prefix is a utility for creating an object with values equal to its k
 - [Motivation](#motivation)
 - [Example](#example)
 - [Usage](#usage)
+  - [Installation](#installation)
+  - [Importing](#importing)
+  - [Example Usage](#example-usage)
 
 ## Motivation
 
@@ -49,6 +52,8 @@ This makes it clear whether the `SEARCH_SUCCESS` action came from `CITIES` or `C
 
 ## Usage
 
+### Installation
+
 First, install the package as a dependency:
 
 ```bash
@@ -59,7 +64,9 @@ yarn add keymirrorprefix
 npm install keymirrorprefix
 ```
 
-Then, you can import `keyMirrorPrefix` using either CommonJS or ES Modules:
+### Importing
+
+You can import `keyMirrorPrefix` using either CommonJS or ES Modules:
 
 For CommonJS:
 
@@ -72,6 +79,10 @@ For ES Modules:
 ```js
 import { keyMirrorPrefix } from 'keymirrorprefix'
 ```
+
+The `keyMirrorPrefix` function is exported both as a default and named export, so you can import it either way.
+
+### Example Usage
 
 Once you've imported `keyMirrorPrefix`, you can use it to create an object with keys mirrored as values, prefixed with a specified string:
 
