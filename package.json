@@ -34,7 +34,9 @@
   },
   "author": "Patrick Taylor <hello@patricktaylor.dev>",
   "keywords": [
-    "key-mirror",
-    "key-mirror-prefix"
+    "key",
+    "keymirror",
+    "mirror",
+    "prefix"
   ]
 }
