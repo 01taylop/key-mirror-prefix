@@ -3,7 +3,7 @@
   "description": "A utility for prefixing mirrored key-value pairs in JavaScript objects.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/01taylop/key-mirror-prefix"
+    "url": "git+https://github.com/01taylop/key-mirror-prefix.git"
   },
   "version": "1.0.1",
   "type": "module",
