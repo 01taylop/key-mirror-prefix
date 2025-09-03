@@ -9,6 +9,8 @@ A utility for creating an object with values equal to its keys, prefixed with a 
 
 - [Motivation](#motivation)
 - [Example](#example)
+  - [The Problem](#the-problem)
+  - [The Solution](#the-solution)
 - [Usage](#usage)
   - [Installation](#installation)
   - [Importing](#importing)
@@ -22,9 +24,54 @@ Key Mirror Prefix solves this by automatically prefixing groups of constants, en
 
 ## Example
 
-Consider the following action types for searching cities and countries:
+### The Problem
+
+**Single object** - verbose and error-prone:
 
 ```js
+import keyMirror from 'key-mirror'
+
+export const REDUX_ACTIONS = keyMirror({
+  CITIES_SEARCH_REQUEST: null,
+  CITIES_SEARCH_SUCCESS: null,
+  CITIES_SEARCH_FAILURE: null,
+  COUNTRIES_SEARCH_REQUEST: null,
+  COUNTRIES_SEARCH_SUCCESS: null,
+  COUNTRIES_SEARCH_FAILURE: null,
+})
+
+console.log(REDUX_ACTIONS.CITIES_SEARCH_REQUEST) // "CITIES_SEARCH_REQUEST"
+console.log(REDUX_ACTIONS.COUNTRIES_SEARCH_REQUEST) // "COUNTRIES_SEARCH_REQUEST"
+```
+
+**Multiple objects** - collision risk:
+
+```js
+import keyMirror from 'key-mirror'
+
+export const CITIES = keyMirror({
+  SEARCH_REQUEST: null,
+  SEARCH_SUCCESS: null,
+  SEARCH_FAILURE: null,
+})
+
+export const COUNTRIES = keyMirror({
+  SEARCH_REQUEST: null,
+  SEARCH_SUCCESS: null,
+  SEARCH_FAILURE: null,
+})
+
+console.log(CITIES.SEARCH_REQUEST)    // "SEARCH_REQUEST"
+console.log(COUNTRIES.SEARCH_REQUEST) // "SEARCH_REQUEST"
+```
+
+### The Solution
+
+**Using Key Mirror Prefix** - clean and collision-free:
+
+```js
+import { keyMirrorPrefix } from 'keymirrorprefix'
+
 export const CITIES = keyMirrorPrefix('CITIES', {
   SEARCH_REQUEST: null,
   SEARCH_SUCCESS: null,
@@ -36,21 +83,10 @@ export const COUNTRIES = keyMirrorPrefix('COUNTRIES', {
   SEARCH_SUCCESS: null,
   SEARCH_FAILURE: null,
 })
+
+console.log(CITIES.SEARCH_REQUEST)    // "CITIES_SEARCH_REQUEST"
+console.log(COUNTRIES.SEARCH_REQUEST) // "COUNTRIES_SEARCH_REQUEST"
 ```
-
-With Key Mirror Prefix, the logged actions would look like this:
-
-```js
-| prev state  { ... }
-| action      {type: "CITIES_SEARCH_SUCCESS"}
-| next state  { ... }
-
-| prev state  { ... }
-| action      {type: "COUNTRIES_SEARCH_SUCCESS"}
-| next state  { ... }
-```
-
-This makes it clear whether the `SEARCH_SUCCESS` action came from `CITIES` or `COUNTRIES`.
 
 ## Usage
 
