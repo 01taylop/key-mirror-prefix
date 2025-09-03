@@ -16,9 +16,9 @@ A utility for creating an object with values equal to its keys, prefixed with a 
 
 ## Motivation
 
-While working on numerous projects that use React Redux, I found [`keyMirror`](https://github.com/STRML/keyMirror) to be a handy tool for defining Action Types. However, as the action names often become quite similar, it becomes challenging to differentiate them in the console and ensure their uniqueness across the application.
+When building large or complex applications, managing constants like action types, event names, or error codes becomes repetitive and error-prone. Without prefixing, you either risk naming collisions across different areas of your app, or you manually add prefixes everywhere - leading to verbose, inconsistent code.
 
-Key Mirror Prefix addresses this issue by allowing a prefix to be added to a group of action types. This not only makes it easier to identify the source of actions when logged to the console, but also facilitates the uniqueness of action names, a crucial requirement in Redux-based projects.
+Key Mirror Prefix solves this by automatically prefixing groups of constants, ensuring uniqueness while keeping your code clean and maintainable. Whether you're building Redux actions, analytics events, or any other grouped constants, you get organised, collision-free identifiers with minimal effort.
 
 ## Example
 
