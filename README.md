@@ -14,7 +14,8 @@ A utility for creating an object with values equal to its keys, prefixed with a 
 - [Usage](#usage)
   - [Installation](#installation)
   - [Importing](#importing)
-  - [Example Usage](#example-usage)
+  - [Basic Usage](#basic-usage)
+  - [Advanced Usage](#advanced-usage)
 
 ## Motivation
 
@@ -61,7 +62,7 @@ export const COUNTRIES = keyMirror({
   SEARCH_FAILURE: null,
 })
 
-console.log(CITIES.SEARCH_REQUEST)    // "SEARCH_REQUEST"
+console.log(CITIES.SEARCH_REQUEST) // "SEARCH_REQUEST"
 console.log(COUNTRIES.SEARCH_REQUEST) // "SEARCH_REQUEST"
 ```
 
@@ -84,7 +85,7 @@ export const COUNTRIES = keyMirrorPrefix('COUNTRIES', {
   SEARCH_FAILURE: null,
 })
 
-console.log(CITIES.SEARCH_REQUEST)    // "CITIES_SEARCH_REQUEST"
+console.log(CITIES.SEARCH_REQUEST) // "CITIES_SEARCH_REQUEST"
 console.log(COUNTRIES.SEARCH_REQUEST) // "COUNTRIES_SEARCH_REQUEST"
 ```
 
@@ -92,62 +93,67 @@ console.log(COUNTRIES.SEARCH_REQUEST) // "COUNTRIES_SEARCH_REQUEST"
 
 ### Installation
 
-First, install the package as a dependency:
+Install the package as a dependency:
 
 ```bash
-# Using yarn
-yarn add keymirrorprefix
-
 # Using npm
 npm install keymirrorprefix
+
+# Using yarn
+yarn add keymirrorprefix
 ```
 
 ### Importing
 
 You can import `keyMirrorPrefix` using either CommonJS or ES Modules:
 
-For CommonJS:
-
 ```js
+// Using CommonJS
 const { keyMirrorPrefix } = require('keymirrorprefix')
-```
 
-For ES Modules:
-
-```js
+// Using ES Modules
 import { keyMirrorPrefix } from 'keymirrorprefix'
 ```
 
 The `keyMirrorPrefix` function is exported both as a default and named export, so you can import it either way.
 
-### Example Usage
+### Basic Usage
 
 Once you've imported `keyMirrorPrefix`, you can use it to create an object with keys mirrored as values, prefixed with a specified string:
 
 ```js
-const COLOURS = keyMirrorPrefix('COLOURS', {
-  blue: null,
-  red: null,
+const NAVIGATION = keyMirrorPrefix('NAVIGATION', {
+  CLICK: null,
+  CLOSE: null,
+  OPEN: null,
 })
 
-console.log(COLOURS.blue) // "COLOURS_blue"
+const PANEL = keyMirrorPrefix('PANEL', {
+  CLOSE: null,
+  OPEN: null,
+})
+
+console.log(NAVIGATION.OPEN) // "NAVIGATION_OPEN"
+console.log(PANEL.OPEN) // "PANEL_OPEN"
 ```
+
+### Advanced Usage
 
 If you do not need a prefix, you can either pass `null` as the first argument to `keyMirrorPrefix`, or you can import and use `keyMirror`:
 
 ```js
 import { keyMirror, keyMirrorPrefix } from 'keymirrorprefix'
 
-const COLOURS = keyMirrorPrefix(null, {
-  blue: null,
-  red: null,
+const ANALYTICS = keyMirrorPrefix(null, {
+  SEARCH: null,
+  SIGN_OUT: null,
 })
 
-const SHAPES = keyMirror({
-  square: null,
-  triangle: null,
+const EVENTS = keyMirror({
+  BLUR: null,
+  FOCUS: null,
 })
 
-console.log(COLOURS.blue) // "blue"
-console.log(SHAPES.square) // "square"
+console.log(ANALYTICS.SEARCH) // "SEARCH"
+console.log(EVENTS.BLUR) // "BLUR"
 ```
