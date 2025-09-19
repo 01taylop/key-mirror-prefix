@@ -1,6 +1,6 @@
 {
   "name": "keymirrorprefix",
-  "description": "A utility for prefixing mirrored key-value pairs in JavaScript objects.",
+  "description": "A utility for creating an object with values equal to its keys, prefixed with a specified string.",
   "version": "1.0.1",
   "repository": {
     "type": "git",
