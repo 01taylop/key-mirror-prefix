@@ -4,7 +4,15 @@ const keyMirrorPrefix = <T extends KeyMirrorInput>(
   prefix: string | null,
   obj: T,
 ): { [K in keyof T]: string } => {
-  if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
+  if (obj === null) {
+    throw new Error('keyMirrorPrefix: Expected an object, but received null')
+  }
+
+  if (Array.isArray(obj)) {
+    throw new Error('keyMirrorPrefix: Expected an object, but received an array')
+  }
+
+  if (typeof obj !== 'object') {
     throw new Error(`keyMirrorPrefix: Expected an object, but received ${typeof obj}`)
   }
 
