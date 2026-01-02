@@ -32,5 +32,3 @@ export {
   keyMirror,
   keyMirrorPrefix,
 }
-
-export default keyMirrorPrefix

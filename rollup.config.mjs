@@ -23,7 +23,7 @@ const commonTypeScriptOptions = {
 export default defineConfig([{
   ...commonOptions,
   output: {
-    exports: 'auto',
+    exports: 'named',
     file: 'lib/index.cjs',
     format: 'cjs',
   },
