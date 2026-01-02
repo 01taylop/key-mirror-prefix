@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module'
 
-const requireCJS = createRequire(import.meta.url)
-const { keyMirror, keyMirrorPrefix } = requireCJS('../lib/index.cjs')
+const esmRequire = createRequire(import.meta.url)
+const { keyMirror, keyMirrorPrefix } = esmRequire('../lib/index.cjs')
 
 describe('Integration tests - CJS', () => {
 
