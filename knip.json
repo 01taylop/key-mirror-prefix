@@ -1,4 +1,6 @@
 {
   "ignoreBinaries": [],
-  "ignoreDependencies": []
+  "ignoreDependencies": [
+    "ts-node"
+  ]
 }

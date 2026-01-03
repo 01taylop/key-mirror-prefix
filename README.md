@@ -114,8 +114,6 @@ const { keyMirrorPrefix } = require('keymirrorprefix')
 import { keyMirrorPrefix } from 'keymirrorprefix'
 ```
 
-The `keyMirrorPrefix` function is exported both as a default and named export, so you can import it either way.
-
 ### Basic Usage
 
 Once you've imported `keyMirrorPrefix`, you can use it to create an object with keys mirrored as values, prefixed with a specified string:
