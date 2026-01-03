@@ -1,6 +1,5 @@
 # 🔑 Key Mirror Prefix
 
-[![CodeQL Analysis](https://github.com/01taylop/key-mirror-prefix/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/01taylop/key-mirror-prefix/actions/workflows/codeql-analysis.yml)
 [![Test](https://github.com/01taylop/key-mirror-prefix/actions/workflows/test.yml/badge.svg)](https://github.com/01taylop/key-mirror-prefix/actions/workflows/test.yml)
 
 ![Node Versions Supported](https://img.shields.io/static/v1?label=node&message=>=18.18.0&color=blue)
@@ -15,7 +14,7 @@ A utility for creating an object with values equal to its keys, prefixed with a 
   - [Installation](#installation)
   - [Importing](#importing)
   - [Basic Usage](#basic-usage)
-  - [Advanced Usage](#advanced-usage)
+  - [Usage Without Prefix](#usage-without-prefix)
 
 ## Motivation
 
@@ -137,7 +136,7 @@ console.log(NAVIGATION.OPEN) // "NAVIGATION_OPEN"
 console.log(PANEL.OPEN) // "PANEL_OPEN"
 ```
 
-### Advanced Usage
+### Usage Without Prefix
 
 If you do not need a prefix, you can either pass `null` as the first argument to `keyMirrorPrefix`, or you can import and use `keyMirror`:
 
