@@ -28,6 +28,7 @@
     "test:integration": "yarn node --experimental-vm-modules $(yarn bin jest) tests/"
   },
   "devDependencies": {
+    "@changesets/cli": "2.29.8",
     "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-terser": "0.4.4",
     "@rollup/plugin-typescript": "12.1.4",
