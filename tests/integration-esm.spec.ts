@@ -2,19 +2,19 @@ import { keyMirror, keyMirrorPrefix } from '../lib/index.js'
 
 describe('Integration tests - ESM', () => {
 
-  it('keyMirror works correctly', () => {
+  test('keyMirror works correctly', () => {
     const result = keyMirror({ a: null, b: null })
 
     expect(result).toEqual({ a: 'a', b: 'b' })
   })
 
-  it('keyMirrorPrefix works correctly', () => {
+  test('keyMirrorPrefix works correctly', () => {
     const result = keyMirrorPrefix('test', { x: null })
 
     expect(result).toEqual({ x: 'test_x' })
   })
 
-  it('keyMirror has correct type inference', () => {
+  test('keyMirror has correct type inference', () => {
     const result = keyMirror({ foo: null, bar: null })
 
     // Type assertions - TypeScript will error if types are incorrect
@@ -25,7 +25,7 @@ describe('Integration tests - ESM', () => {
     expect(bar).toBe('bar')
   })
 
-  it('keyMirrorPrefix has correct type inference', () => {
+  test('keyMirrorPrefix has correct type inference', () => {
     const result = keyMirrorPrefix('prefix', { foo: null, bar: null })
 
     // Type assertions - TypeScript will error if types are incorrect
