@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/01taylop/key-mirror-prefix/actions/workflows/test.yml/badge.svg)](https://github.com/01taylop/key-mirror-prefix/actions/workflows/test.yml)
 
-![Node Versions Supported](https://img.shields.io/static/v1?label=node&message=>=18.18.0&color=blue)
+![Node Versions Supported](https://img.shields.io/node/v/keymirrorprefix?color=blue)
 
 A utility for creating an object with values equal to its keys, prefixed with a specified string. Ideal for Redux action types, analytics events, error codes, and other constants that need unique identifiers across modules.
 
