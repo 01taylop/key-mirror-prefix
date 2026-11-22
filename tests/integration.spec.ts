@@ -6,7 +6,6 @@ import {
 const {
   keyMirror: keyMirrorCJS,
   keyMirrorPrefix: keyMirrorPrefixCJS,
-  // @ts-ignore - CJS build doesn't have type definitions
 } = await import('../lib/index.cjs')
 
 describe.each([
