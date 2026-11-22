@@ -1,36 +1,19 @@
 import { keyMirror, keyMirrorPrefix } from '..'
 
-describe('error handling', () => {
-
-  describe.each([
-    ['keyMirror', (obj: unknown) => keyMirror(obj as any)],
-    ['keyMirrorPrefix', (obj: unknown) => keyMirrorPrefix(null, obj as any)],
-  ])('%s', (_fnName, fn) => {
-
-    test.each([
-      ['null', null],
-      ['undefined', undefined],
-    ])('throws an error when the object argument is %s', (objType, obj) => {
-      expect(() => fn(obj)).toThrow(`keyMirrorPrefix: Expected an object, but received ${objType}`)
-    })
-
-    test.each([
-      ['boolean', true],
-      ['number', 12],
-      ['string', 'string'],
-    ])('throws an error when the object argument is of type %s', (objType, obj) => {
-      expect(() => fn(obj)).toThrow(`keyMirrorPrefix: Expected an object, but received ${objType}`)
-    })
-
-    it('throws an error when the object argument is an array', () => {
-      expect(() => fn([])).toThrow('keyMirrorPrefix: Expected an object, but received an array')
-    })
-
-  })
-
-})
+const INVALID_OBJECTS: Array<[string, unknown, string]> = [
+  ['undefined', undefined, 'undefined'],
+  ['null', null, 'null'],
+  ['a boolean', true, 'boolean'],
+  ['a number', 12, 'number'],
+  ['a string', 'string', 'string'],
+  ['an array', [], 'an array'],
+]
 
 describe('keyMirrorPrefix', () => {
+
+  it.each(INVALID_OBJECTS)('throws an error when the object argument is %s', (_description, obj, received) => {
+    expect(() => keyMirrorPrefix(null, obj as Record<string, unknown>)).toThrow(`keyMirrorPrefix: Expected an object, but received ${received}`)
+  })
 
   it('returns an empty object when the object argument is empty', () => {
     const result = keyMirrorPrefix(null, {})
@@ -103,6 +86,10 @@ describe('keyMirrorPrefix', () => {
 })
 
 describe('keyMirror', () => {
+
+  it.each(INVALID_OBJECTS)('throws an error when the object argument is %s', (_description, obj, received) => {
+    expect(() => keyMirror(obj as Record<string, unknown>)).toThrow(`keyMirrorPrefix: Expected an object, but received ${received}`)
+  })
 
   it('returns a key mirror object', () => {
     const result = keyMirror({
