@@ -6,7 +6,6 @@ import {
 const {
   keyMirror: keyMirrorCJS,
   keyMirrorPrefix: keyMirrorPrefixCJS,
-  // @ts-ignore - CJS build doesn't have type definitions
 } = await import('../lib/index.cjs')
 
 describe.each([
@@ -14,13 +13,13 @@ describe.each([
   ['CJS', keyMirrorCJS, keyMirrorPrefixCJS],
 ])('Integration tests - %s', (_format, keyMirror, keyMirrorPrefix) => {
 
-  test('keyMirror works correctly', () => {
+  test('mirroring keys with keyMirror', () => {
     const result = keyMirror({ a: null, b: null })
 
     expect(result).toEqual({ a: 'a', b: 'b' })
   })
 
-  test('keyMirrorPrefix works correctly', () => {
+  test('mirroring prefixed keys with keyMirrorPrefix', () => {
     const result = keyMirrorPrefix('test', { x: null })
 
     expect(result).toEqual({ x: 'test_x' })
@@ -30,7 +29,7 @@ describe.each([
 
 describe('Type inference - ESM only', () => {
 
-  test('keyMirror has correct type inference', () => {
+  test('inferring literal key types with keyMirror', () => {
     const result = keyMirrorESM({ foo: null, bar: null })
 
     // Type assertions - TypeScript will error if types are incorrect
@@ -41,7 +40,7 @@ describe('Type inference - ESM only', () => {
     expect(bar).toBe('bar')
   })
 
-  test('keyMirrorPrefix has correct type inference', () => {
+  test('inferring string value types with keyMirrorPrefix', () => {
     const result = keyMirrorPrefixESM('prefix', { foo: null, bar: null })
 
     // Type assertions - TypeScript will error if types are incorrect
